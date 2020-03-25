@@ -1,5 +1,5 @@
 
-/*use TestBase
+use TestBase
 go
 create table Store (
 Id BIGINT NOT NULL IDENTITY(1,1) PRIMARY KEY,
@@ -57,8 +57,7 @@ alter table orders drop constraint [PK__Orders__F1E4607BA8F816BC]
 Update Orders SET Id = 0 where Order_Id = 0;
 ALTER TABLE Orders ADD ID2 int;
 update Orders set ID2 = 1 where ID = 0;
-*/
-/*
+
 declare 
 
 Insert into Orders 
@@ -71,14 +70,14 @@ BEGIN
     INSERT INTO tblFoo VALUES(@first)
     SET @first += 1
 END
---------------------------------------------------------------Insert primary Key (nie dzia³a)
+--------------------------------------------------------------Insert primary Key (nie dziaÂ³a)
 ALTER TABLE tbl_name alter column column_name int NOT NULL
 ALTER TABLE tbl_name ADD PRIMARY KEY (column_name)
 Create table Orders (
 ID int not null Primary Key,
 Order_ID BIGINT not null,
 );
-*/
+
 alter table Orders1 add primary key (ID);
  use TestBase
  GO
@@ -107,7 +106,7 @@ FROM Store
 --Zastosowanie procedur
 --https://msdn.microsoft.com/pl-pl/library/encyklopedia-sql--tworzenie-procedur-bazodanowych--create-procedure.aspx
 
---Procedura sprawdzaj¹ca czy dane nie s¹ nullem oraz dodaj¹c kolejny wiersz w tabeli
+--Procedura sprawdzajÂ¹ca czy dane nie sÂ¹ nullem oraz dodajÂ¹c kolejny wiersz w tabeli
 select * from Store
 GO
 CREATE PROCEDURE AddData
@@ -125,7 +124,7 @@ DECLARE @blad AS NVARCHAR(500);
 IF @Order_ID IS NULL OR @Category IS NULL OR @ProductName IS NULL OR @Producent IS NULL OR 
 @AmountOfProduct IS NULL
 BEGIN
-     SET @blad = 'B³êdne dane!';
+     SET @blad = 'BÂ³Ãªdne dane!';
      RAISERROR(@blad, 16,1);
      RETURN;
 END
